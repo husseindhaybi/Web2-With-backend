@@ -15,7 +15,7 @@ function Menu({ addToCart }) {
 
   const fetchMenu = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/menu");
+      const res = await fetch("https://web2-with-backend.onrender.com/api/menu");
       const data = await res.json();
       if (data.success) {
         setMenuData(data.items);
@@ -73,7 +73,7 @@ function Menu({ addToCart }) {
             <Card className="h-100 shadow-sm menu-card">
               <Card.Img
                 variant="top"
-                src={`http://localhost:5000${item.image}`}
+                src={`https://web2-with-backend.onrender.com${item.image}`}
                 alt={item.name}
                 style={{ height: "250px", objectFit: "cover" }}
               />

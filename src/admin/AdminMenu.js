@@ -20,7 +20,7 @@ function AdminMenu() {
   }, []);
 
   const fetchMenu = async () => {
-    const res = await fetch("http://localhost:5000/api/admin/menu", {
+    const res = await fetch("https://web2-with-backend.onrender.com/api/admin/menu", {
       headers: { Authorization: `Bearer ${token}` }
     });
     const data = await res.json();
@@ -36,8 +36,8 @@ function AdminMenu() {
     });
 
     const url = editingItem
-      ? `http://localhost:5000/api/admin/menu/${editingItem.id}`
-      : "http://localhost:5000/api/admin/menu";
+      ? `https://web2-with-backend.onrender.com/api/admin/menu/${editingItem.id}`
+      : "https://web2-with-backend.onrender.com/api/admin/menu";
 
     const method = editingItem ? "PUT" : "POST";
 
@@ -56,7 +56,7 @@ function AdminMenu() {
     if (!window.confirm("Delete item?")) return;
 
     await fetch(
-      `http://localhost:5000/api/admin/menu/${id}`,
+      `https://web2-with-backend.onrender.com/api/admin/menu/${id}`,
       {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` }
@@ -80,7 +80,7 @@ function AdminMenu() {
               <tr key={i.id}>
                 <td>
                   <img
-                    src={`http://localhost:5000${i.image}`}
+                    src={`https://web2-with-backend.onrender.com${i.image}`}
                     width="50"
                     alt=""
                   />

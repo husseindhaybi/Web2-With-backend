@@ -9,7 +9,7 @@ function AdminOrders() {
   }, []);
 
   const fetchOrders = async () => {
-    const res = await fetch("http://localhost:5000/api/admin/orders", {
+    const res = await fetch("https://web2-with-backend.onrender.com/api/admin/orders", {
       headers: { Authorization: `Bearer ${token}` }
     });
     const data = await res.json();
@@ -18,7 +18,7 @@ function AdminOrders() {
 
   const updateOrderStatus = async (id, status) => {
     await fetch(
-      `http://localhost:5000/api/admin/orders/${id}/status`,
+      `https://web2-with-backend.onrender.com/api/admin/orders/${id}/status`,
       {
         method: "PUT",
         headers: {

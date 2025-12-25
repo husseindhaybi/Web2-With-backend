@@ -10,7 +10,7 @@ function AdminMessages() {
 
   const fetchMessages = async () => {
     const res = await fetch(
-      "http://localhost:5000/api/admin/messages",
+      "https://web2-with-backend.onrender.com/api/admin/messages",
       {
         headers: { Authorization: `Bearer ${token}` }
       }
@@ -23,7 +23,7 @@ function AdminMessages() {
     if (!window.confirm("Delete this message?")) return;
 
     await fetch(
-      `http://localhost:5000/api/admin/messages/${id}`,
+      `https://web2-with-backend.onrender.com/api/admin/messages/${id}`,
       {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` }

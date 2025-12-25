@@ -36,7 +36,7 @@ function OrderTracking() {
     const fetchOrderStatus = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/orders/${orderId}`,
+          `https://web2-with-backend.onrender.com/api/orders/${orderId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

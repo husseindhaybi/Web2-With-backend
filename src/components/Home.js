@@ -14,7 +14,7 @@ function Home() {
 
   const fetchFeatured = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/menu');
+      const res = await fetch('https://web2-with-backend.onrender.com/api/menu');
       const data = await res.json();
       if (data.success) {
         setFeaturedDishes(data.items);
@@ -59,7 +59,7 @@ function Home() {
               <Card className="h-100 shadow-sm">
                 <Card.Img
                   variant="top"
-                  src={`http://localhost:5000${dish.image}`}
+                  src={`https://web2-with-backend.onrender.com${dish.image}`}
                   style={{ height: "250px", objectFit: "cover" }}
                 />
                 <Card.Body>
