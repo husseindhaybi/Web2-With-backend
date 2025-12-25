@@ -1,0 +1,21 @@
+footer {
+  margin-top: auto;
+}
+
+footer a:hover {
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.social-links a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-5px);
+}
+
+footer hr {
+  opacity: 0.3;
+}
