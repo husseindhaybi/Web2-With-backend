@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Restaurant Ordering System - Full Stack Project",
   "private": true,
-  "homepage": "https://husseindhaybi.github.io/",
+  "homepage": "https://husseindhaybi.github.io/Web2-With-backend",
   "proxy": "http://localhost:5000",
   "dependencies": {
     "bootstrap": "^5.3.8",
@@ -24,6 +24,7 @@
     "deploy": "gh-pages -d build",
     "server": "cd backend && npm start",
     "dev": "concurrently \"npm start\" \"npm run server\""
+    
   },
   "eslintConfig": {
     "extends": [
