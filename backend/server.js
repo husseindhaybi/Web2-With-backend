@@ -14,12 +14,33 @@ app.use(express.json());
 const JWT_SECRET = 'your-secret-key-change-in-production';
 
 // ================= DB =================
+// const pool = mysql.createPool({
+//   host: 'localhost',
+//   user: 'root',
+//   password: '',
+//   database: 'restaurant_db',
+//   port: 3307,
+// });
+
+require('dotenv').config(); // اذا كنت تستعمل ES5
+// لو كنت تستخدم import، خليها: import 'dotenv/config';
+
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'restaurant_db',
-  port: 3307,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT || 3306,
+  ssl: false 
+});
+
+app.get("/test", async (req, res) => {
+  try {
+    const [rows] = await pool.query("SELECT 1+1 as result");
+    res.json({ db: "connected", result: rows[0].result });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 // ================= MULTER =================
